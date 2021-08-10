@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hanZhenry.github.io</id>
     <title>henry_blog</title>
-    <updated>2021-08-10T13:30:56.951Z</updated>
+    <updated>2021-08-10T14:35:53.053Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hanZhenry.github.io"/>
     <link rel="self" href="https://hanZhenry.github.io/atom.xml"/>
@@ -11,13 +11,57 @@
     <icon>https://hanZhenry.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, henry_blog</rights>
     <entry>
-        <title type="html"><![CDATA[java--数组]]></title>
+        <title type="html"><![CDATA[数组]]></title>
         <id>https://hanZhenry.github.io/post/java-shu-zu/</id>
         <link href="https://hanZhenry.github.io/post/java-shu-zu/">
         </link>
         <updated>2021-08-10T13:24:33.000Z</updated>
         <content type="html"><![CDATA[<h1 id="数组">数组</h1>
 <h2 id="一维数组">一维数组</h2>
+<ol>
+<li>一维数组初始化两种方式<br>
+1.1 静态化初始化<pre><code>1.String arr1= new String[]{&quot;henry&quot;,&quot;lina&quot;,&quot;smith&quot;};
+</code></pre>
+1.2 动态初始化<pre><code>2.int[] arr = new int[5];
+</code></pre>
+</li>
+</ol>
+<p>tips:数组一旦初始化,其&quot;arr.length&quot;(长度)就会被确定，且不可修改。</p>
+<ol start="2">
+<li>
+<p>二维数组初始化两种方式<br>
+2.1 静态化初始化</p>
+<pre><code>1.int[][] arr = new int[][]{{1,2,3},{4,5,6}};
+</code></pre>
+<p>2.2 动态初始化</p>
+<pre><code>int[][] arr = new int[5][];
+int[][] arr = new int[5][4];  
+</code></pre>
+</li>
+<li>
+<p>如何遍历二维数组<br>
+3.1利用循环语句即可</p>
+<pre><code>int[][] arr1= new int[][]{{1，2，3}，{4，5，6}，{7，8，9}};
+for(int i= 0;i&lt;arr.length;i++{
+    for(int j= 0;j&lt;arr[i].length;J++){
+        System.out.print(arr[i][j]);
+    }
+
+}
+</code></pre>
+</li>
+<li>
+<p>不同类型的一维数组元素的初始化值是多少<br>
+int: 0<br>
+boolean:false<br>
+引用类型：null<br>
+char： 0</p>
+</li>
+<li>
+<p>内存解析<br>
+分析地址和元素。</p>
+</li>
+</ol>
 ]]></content>
     </entry>
     <entry>
