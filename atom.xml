@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hanZhenry.github.io</id>
     <title>henry_blog</title>
-    <updated>2021-07-30T13:07:52.167Z</updated>
+    <updated>2021-08-10T13:24:59.454Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hanZhenry.github.io"/>
     <link rel="self" href="https://hanZhenry.github.io/atom.xml"/>
@@ -10,6 +10,16 @@
     <logo>https://hanZhenry.github.io/images/avatar.png</logo>
     <icon>https://hanZhenry.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, henry_blog</rights>
+    <entry>
+        <title type="html"><![CDATA[java--数组]]></title>
+        <id>https://hanZhenry.github.io/post/java-shu-zu/</id>
+        <link href="https://hanZhenry.github.io/post/java-shu-zu/">
+        </link>
+        <updated>2021-08-10T13:24:33.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="数组">数组</h1>
+<h2 id="一维数组">一维数组</h2>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[关于Henry小站]]></title>
         <id>https://hanZhenry.github.io/post/about/</id>
