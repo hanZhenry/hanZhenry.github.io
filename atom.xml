@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hanZhenry.github.io</id>
     <title>henry_blog</title>
-    <updated>2021-08-13T15:31:40.630Z</updated>
+    <updated>2021-08-13T15:34:41.344Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hanZhenry.github.io"/>
     <link rel="self" href="https://hanZhenry.github.io/atom.xml"/>
@@ -16,13 +16,13 @@
         <link href="https://hanZhenry.github.io/post/java-zhi-mian-xiang-dui-xiang/">
         </link>
         <updated>2021-08-13T15:25:19.000Z</updated>
-        <summary type="html"><![CDATA[<p>#面向对象<br>
-##一.学习面向对象内容的三条主线<br>
-1.Java类及类的成员:属性、方法、构造器、代码块、内部类<br>
+        <summary type="html"><![CDATA[<h1 id="面向对象">面向对象</h1>
+<h2 id="一学习面向对象内容的三条主线">一.学习面向对象内容的三条主线</h2>
+<p>1.Java类及类的成员:属性、方法、构造器、代码块、内部类<br>
 2.面向对象的三大特征: 封装、 继承、多态、(抽象性)<br>
-3.其它关键字: this， super， static， final， abstract， interface<br>
-##二.面向过程，面向对象的解释<br>
-1.面向过程，强调的是功能行为，以函数为最小单位，考虑怎么做。<br>
+3.其它关键字: this， super， static， final， abstract， interface</p>
+<h2 id="二面向过程面向对象的解释">二.面向过程，面向对象的解释</h2>
+<p>1.面向过程，强调的是功能行为，以函数为最小单位，考虑怎么做。<br>
 ——————————————————————————<br>
 1.打开冰箱<br>
 2.把大象装进冰箱<br>
@@ -55,9 +55,9 @@
 进入(冰箱){ }
 }
 </code></pre>
-<p>——————————————————————————<br>
-##三.面向对象的思想概述<br>
-类是对一类事物的描述，是抽象的、概念上的定义<br>
+<p>——————————————————————————</p>
+<h2 id="三面向对象的思想概述">三.面向对象的思想概述</h2>
+<p>类是对一类事物的描述，是抽象的、概念上的定义<br>
 对象是实际存在的该类事物的每个个体，因而也称为实例(instance)。<br>
 1.面向对象程序设计的重点是类的设计、 类的设计，其实就是类的成员的设计</p>
 <p>属性=成员变量=field=域<br>
@@ -130,8 +130,8 @@ class person{
 	}
 }
 </code></pre>
-<p>##四.类中属性的使用<br>
-1.属性(成员变量) vs 局部变量</p>
+<h2 id="四类中属性的使用">四.类中属性的使用</h2>
+<p>1.属性(成员变量) vs 局部变量</p>
 <pre><code>1.1.相同点
   定义变量的格式： 数据类型 变量名= 变量值;
   先声明、后使用
@@ -223,13 +223,13 @@ class user{
 }
 </code></pre>
 ]]></summary>
-        <content type="html"><![CDATA[<p>#面向对象<br>
-##一.学习面向对象内容的三条主线<br>
-1.Java类及类的成员:属性、方法、构造器、代码块、内部类<br>
+        <content type="html"><![CDATA[<h1 id="面向对象">面向对象</h1>
+<h2 id="一学习面向对象内容的三条主线">一.学习面向对象内容的三条主线</h2>
+<p>1.Java类及类的成员:属性、方法、构造器、代码块、内部类<br>
 2.面向对象的三大特征: 封装、 继承、多态、(抽象性)<br>
-3.其它关键字: this， super， static， final， abstract， interface<br>
-##二.面向过程，面向对象的解释<br>
-1.面向过程，强调的是功能行为，以函数为最小单位，考虑怎么做。<br>
+3.其它关键字: this， super， static， final， abstract， interface</p>
+<h2 id="二面向过程面向对象的解释">二.面向过程，面向对象的解释</h2>
+<p>1.面向过程，强调的是功能行为，以函数为最小单位，考虑怎么做。<br>
 ——————————————————————————<br>
 1.打开冰箱<br>
 2.把大象装进冰箱<br>
@@ -262,9 +262,9 @@ class user{
 进入(冰箱){ }
 }
 </code></pre>
-<p>——————————————————————————<br>
-##三.面向对象的思想概述<br>
-类是对一类事物的描述，是抽象的、概念上的定义<br>
+<p>——————————————————————————</p>
+<h2 id="三面向对象的思想概述">三.面向对象的思想概述</h2>
+<p>类是对一类事物的描述，是抽象的、概念上的定义<br>
 对象是实际存在的该类事物的每个个体，因而也称为实例(instance)。<br>
 1.面向对象程序设计的重点是类的设计、 类的设计，其实就是类的成员的设计</p>
 <p>属性=成员变量=field=域<br>
@@ -337,8 +337,8 @@ class person{
 	}
 }
 </code></pre>
-<p>##四.类中属性的使用<br>
-1.属性(成员变量) vs 局部变量</p>
+<h2 id="四类中属性的使用">四.类中属性的使用</h2>
+<p>1.属性(成员变量) vs 局部变量</p>
 <pre><code>1.1.相同点
   定义变量的格式： 数据类型 变量名= 变量值;
   先声明、后使用
