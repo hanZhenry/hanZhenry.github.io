@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hanZhenry.github.io</id>
     <title>henry_blog</title>
-    <updated>2021-08-10T14:53:54.022Z</updated>
+    <updated>2021-08-13T15:29:50.157Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hanZhenry.github.io"/>
     <link rel="self" href="https://hanZhenry.github.io/atom.xml"/>
@@ -10,6 +10,428 @@
     <logo>https://hanZhenry.github.io/images/avatar.png</logo>
     <icon>https://hanZhenry.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, henry_blog</rights>
+    <entry>
+        <title type="html"><![CDATA[java之面向对象]]></title>
+        <id>https://hanZhenry.github.io/post/java-zhi-mian-xiang-dui-xiang/</id>
+        <link href="https://hanZhenry.github.io/post/java-zhi-mian-xiang-dui-xiang/">
+        </link>
+        <updated>2021-08-13T15:25:19.000Z</updated>
+        <summary type="html"><![CDATA[<p>#面向对象<br>
+##一.学习面向对象内容的三条主线<br>
+1.Java类及类的成员:属性、方法、构造器、代码块、内部类<br>
+2.面向对象的三大特征: 封装、 继承、多态、(抽象性)<br>
+3.其它关键字: this， super， static， final， abstract， interface<br>
+##二.面向过程，面向对象的解释<br>
+1.面向过程，强调的是功能行为，以函数为最小单位，考虑怎么做。<br>
+——————————————————————————<br>
+1.打开冰箱<br>
+2.把大象装进冰箱<br>
+3.把冰箱门关<br>
+——————————————————————————<br>
+2.面向对象，将功能封装进对象，强调具备了功能的对象，以类/对象为最小单位，考虑谁来做。<br>
+——————————————————————————<br>
+//创建对象</p>
+<pre><code>   人{
+    打开（冰箱）{
+    冰箱.开门();
+   }
+
+
+    操作(大象){
+    大象.进入(冰箱);
+   }
+</code></pre>
+<p>//创建函数</p>
+<pre><code> 关闭(冰箱){ 
+   冰箱.关门(); 
+  }
+}
+ 冰箱{
+ 开门(){ } 
+  关门(){ }
+}
+
+ 大象{
+进入(冰箱){ }
+}
+</code></pre>
+<p>——————————————————————————<br>
+##三.面向对象的思想概述<br>
+类是对一类事物的描述，是抽象的、概念上的定义<br>
+对象是实际存在的该类事物的每个个体，因而也称为实例(instance)。<br>
+1.面向对象程序设计的重点是类的设计、 类的设计，其实就是类的成员的设计</p>
+<p>属性=成员变量=field=域<br>
+方法= 成员方法 =函数=method<br>
+2.类和对象的过程</p>
+<pre><code>     1.创建类，设计类的成员
+     2.创建类的对象
+     3.通过&quot;对象.属性&quot;&quot;对象.方法&quot;调用对象的结构 
+</code></pre>
+<p>3.程序说明</p>
+<pre><code>public class oppTest1 {
+ public static void main(String[] args) {
+	//创建person类的对象
+	 person p1= new person();
+	 
+	 
+	 // 调用对象的结构：属性、方法
+	    //调用属性
+	 p1.name= &quot;henry&quot;;
+	 p1.age= 24;
+	 p1.sexual= &quot;man&quot;;
+	 System.out.println(p1.name+&quot; &quot;+p1.age+&quot; &quot;+p1.sexual);
+	   //调用方法&quot;对象.方法&quot;
+	 p1.eat();
+	 p1.sleep();
+	 p1.interesting(&quot;compute&quot;);
+	 
+	 person p2= new person();
+	 p2.name= &quot;han&quot;;
+	 p2.age =30;
+	 System.out.println(p2.name+&quot; &quot;+p1.age);
+	
+	 person p3= p1;
+	 
+	 //赋予的是 p1.name内存地址
+	 p3.name= p1.name;
+	 System.out.println(p3.name);
+}
+}
+
+
+//造好一个类
+class person{
+	
+	//属性
+	String name;
+	int age;
+	String sexual;
+	
+	
+
+	
+	
+	//方法
+	public void eat (){
+		System.out.println(&quot;吃饭&quot;);
+		
+	}
+	public void sleep (){
+		System.out.println(&quot;睡觉&quot;);
+		
+	}
+	public void work(){
+		System.out.println(&quot;工作&quot;);
+		
+	}
+	public void interesting(String things){
+		System.out.println(&quot;兴趣&quot;+things);
+		
+	}
+}
+</code></pre>
+<p>##四.类中属性的使用<br>
+1.属性(成员变量) vs 局部变量</p>
+<pre><code>1.1.相同点
+  定义变量的格式： 数据类型 变量名= 变量值;
+  先声明、后使用
+  变量有其对应的作用域
+
+1.2.不同点
+1.类中声明的位置不同
+   局部变量： 声明在方法内、方法形参、代码块、构造器形参、构造器内部的变量
+   2. 关于权限修饰符的不同
+   属性：在声明属性时，指明其权限，使用权限修饰符,常用的权限修饰符：private、public、static、final等
+   局部变量：不能用权限修饰符修饰，可以用final修饰
+     
+ 
+2.初始化值    
+   属性：有默认初始化值
+    byte 0
+    short 0
+    int 0
+    long 0L
+    float 0.0F
+    double 0.0
+    char 0 或写为:’\u0000’(表现为空)
+     boolean false
+     引用类型 null
+
+    局部变量：没有默认初始化值，必须显式赋值，     
+3.内存加载位置
+   属性：堆空间 或 静态域内
+  局部变量：栈空间  
+</code></pre>
+<p>代码呈现</p>
+<pre><code>public class oppTest2 {
+public static void main(String[] args){
+  //以类创建对象
+  user  u1= new u1();
+
+
+  //调用类的属性
+
+  u1.name= &quot;henry&quot;;
+  u1.age= 24;
+  u1.address= &quot;wuhu&quot;;
+  u1.phoneNumber= 1123456789;
+  u1.email= &quot;123456@qq.com&quot;;
+
+
+  //调用类的方法
+  u1.talk();
+   u1.eat();
+
+
+
+
+
+
+
+
+
+
+
+}
+}
+
+class user{
+	
+	String name;
+	int    age ;
+	String address;
+	int    phoneNumber;
+	String email;
+	
+	
+    public void talk(String language) {//language：形参，也是局部变量
+    	System.out.println(&quot;使用&quot;+language+&quot;交流&quot;);
+    	
+    	
+    }
+	
+    public void eat() {
+    	String food=&quot;cake&quot;;//局部变量
+    	System.out.println(&quot;user like whats food:&quot;+ food);
+    	
+    	
+    }
+	
+	
+	
+	
+}
+</code></pre>
+]]></summary>
+        <content type="html"><![CDATA[<p>#面向对象<br>
+##一.学习面向对象内容的三条主线<br>
+1.Java类及类的成员:属性、方法、构造器、代码块、内部类<br>
+2.面向对象的三大特征: 封装、 继承、多态、(抽象性)<br>
+3.其它关键字: this， super， static， final， abstract， interface<br>
+##二.面向过程，面向对象的解释<br>
+1.面向过程，强调的是功能行为，以函数为最小单位，考虑怎么做。<br>
+——————————————————————————<br>
+1.打开冰箱<br>
+2.把大象装进冰箱<br>
+3.把冰箱门关<br>
+——————————————————————————<br>
+2.面向对象，将功能封装进对象，强调具备了功能的对象，以类/对象为最小单位，考虑谁来做。<br>
+——————————————————————————<br>
+//创建对象</p>
+<pre><code>   人{
+    打开（冰箱）{
+    冰箱.开门();
+   }
+
+
+    操作(大象){
+    大象.进入(冰箱);
+   }
+</code></pre>
+<p>//创建函数</p>
+<pre><code> 关闭(冰箱){ 
+   冰箱.关门(); 
+  }
+}
+ 冰箱{
+ 开门(){ } 
+  关门(){ }
+}
+
+ 大象{
+进入(冰箱){ }
+}
+</code></pre>
+<p>——————————————————————————<br>
+##三.面向对象的思想概述<br>
+类是对一类事物的描述，是抽象的、概念上的定义<br>
+对象是实际存在的该类事物的每个个体，因而也称为实例(instance)。<br>
+1.面向对象程序设计的重点是类的设计、 类的设计，其实就是类的成员的设计</p>
+<p>属性=成员变量=field=域<br>
+方法= 成员方法 =函数=method<br>
+2.类和对象的过程</p>
+<pre><code>     1.创建类，设计类的成员
+     2.创建类的对象
+     3.通过&quot;对象.属性&quot;&quot;对象.方法&quot;调用对象的结构 
+</code></pre>
+<p>3.程序说明</p>
+<pre><code>public class oppTest1 {
+ public static void main(String[] args) {
+	//创建person类的对象
+	 person p1= new person();
+	 
+	 
+	 // 调用对象的结构：属性、方法
+	    //调用属性
+	 p1.name= &quot;henry&quot;;
+	 p1.age= 24;
+	 p1.sexual= &quot;man&quot;;
+	 System.out.println(p1.name+&quot; &quot;+p1.age+&quot; &quot;+p1.sexual);
+	   //调用方法&quot;对象.方法&quot;
+	 p1.eat();
+	 p1.sleep();
+	 p1.interesting(&quot;compute&quot;);
+	 
+	 person p2= new person();
+	 p2.name= &quot;han&quot;;
+	 p2.age =30;
+	 System.out.println(p2.name+&quot; &quot;+p1.age);
+	
+	 person p3= p1;
+	 
+	 //赋予的是 p1.name内存地址
+	 p3.name= p1.name;
+	 System.out.println(p3.name);
+}
+}
+
+
+//造好一个类
+class person{
+	
+	//属性
+	String name;
+	int age;
+	String sexual;
+	
+	
+
+	
+	
+	//方法
+	public void eat (){
+		System.out.println(&quot;吃饭&quot;);
+		
+	}
+	public void sleep (){
+		System.out.println(&quot;睡觉&quot;);
+		
+	}
+	public void work(){
+		System.out.println(&quot;工作&quot;);
+		
+	}
+	public void interesting(String things){
+		System.out.println(&quot;兴趣&quot;+things);
+		
+	}
+}
+</code></pre>
+<p>##四.类中属性的使用<br>
+1.属性(成员变量) vs 局部变量</p>
+<pre><code>1.1.相同点
+  定义变量的格式： 数据类型 变量名= 变量值;
+  先声明、后使用
+  变量有其对应的作用域
+
+1.2.不同点
+1.类中声明的位置不同
+   局部变量： 声明在方法内、方法形参、代码块、构造器形参、构造器内部的变量
+   2. 关于权限修饰符的不同
+   属性：在声明属性时，指明其权限，使用权限修饰符,常用的权限修饰符：private、public、static、final等
+   局部变量：不能用权限修饰符修饰，可以用final修饰
+     
+ 
+2.初始化值    
+   属性：有默认初始化值
+    byte 0
+    short 0
+    int 0
+    long 0L
+    float 0.0F
+    double 0.0
+    char 0 或写为:’\u0000’(表现为空)
+     boolean false
+     引用类型 null
+
+    局部变量：没有默认初始化值，必须显式赋值，     
+3.内存加载位置
+   属性：堆空间 或 静态域内
+  局部变量：栈空间  
+</code></pre>
+<p>代码呈现</p>
+<pre><code>public class oppTest2 {
+public static void main(String[] args){
+  //以类创建对象
+  user  u1= new u1();
+
+
+  //调用类的属性
+
+  u1.name= &quot;henry&quot;;
+  u1.age= 24;
+  u1.address= &quot;wuhu&quot;;
+  u1.phoneNumber= 1123456789;
+  u1.email= &quot;123456@qq.com&quot;;
+
+
+  //调用类的方法
+  u1.talk();
+   u1.eat();
+
+
+
+
+
+
+
+
+
+
+
+}
+}
+
+class user{
+	
+	String name;
+	int    age ;
+	String address;
+	int    phoneNumber;
+	String email;
+	
+	
+    public void talk(String language) {//language：形参，也是局部变量
+    	System.out.println(&quot;使用&quot;+language+&quot;交流&quot;);
+    	
+    	
+    }
+	
+    public void eat() {
+    	String food=&quot;cake&quot;;//局部变量
+    	System.out.println(&quot;user like whats food:&quot;+ food);
+    	
+    	
+    }
+	
+	
+	
+	
+}
+</code></pre>
+<!-- more -->
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[数组]]></title>
         <id>https://hanZhenry.github.io/post/java-shu-zu/</id>
