@@ -143,36 +143,163 @@
         <article class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0">
             <figure class="animate-box">
                 
-                    <img src="https://hanZhenry.github.io/post-images/about.jpg" alt="关于Henry小站" class="img-responsive">
-                
             </figure>
             <span class="fh5co-meta animate-box">
                 
             </span>
-            <h2 class="fh5co-article-title animate-box">关于Henry小站</h2>
+            <h2 class="fh5co-article-title animate-box">初识c语言</h2>
             <ol class="breadcrumb fh5co-meta fh5co-date animate-box" style="margin-bottom:0; background-color:#f8f9fa">
-                <li>2019-01-25</li>
-                <li>57字</li>
-                <li>1 min read</li>
+                <li>2022-01-31</li>
+                <li>573字</li>
+                <li>3 min read</li>
             </ol>
 
             <div class="col-lg-12 col-lg-offset-0 col-md-12 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-left content-article">
                 <div class="row">
                     <div class="col-md-12 animate-box post-content">
-                        <p> <blockquote>
-<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
-</blockquote>
-<figure data-type="image" tabindex="1"><img src="https://hanZhenry.github.io/post-images/1627057240363.jpg" alt="" loading="lazy"></figure>
-<h2 id="计算机人工智能的技术博客">🏠 计算机，人工智能的技术博客</h2>
-<h2 id="博主是谁哼瑞汉henry-han">👨‍💻 博主是谁——哼瑞汉（henry han）</h2>
-<h2 id="兴趣爱好-c语言嵌入式人工智能">⛹ 兴趣爱好 ——C语言，嵌入式，人工智能</h2>
-<h2 id="联系我呀hanliangliang1118163com">📬 联系我呀——hanliangliang1118@163.com</h2>
+                        <p> <p><strong>1.第一个程序</strong></p>
+<h2 id=""></h2>
+<pre><code>#include&lt;stdio.h&gt;
+int main() {
+ printf(&quot;HelloWorld\n&quot;);
+ return 0；
+}
+
+</code></pre>
+<ul>
+<li>#include&lt;stdio.h&gt; 头文件，标准输入输出库</li>
+<li>int main（）主函数——程序的入口，有且只有一个。int 表示返回一个整型值。</li>
+<li>printf() 打印函数 c语言库本身提供的函数</li>
+</ul>
+<h2 id="-2"></h2>
+<p><strong>2.数据类型</strong></p>
+<pre><code>int main(){
+char a= 'A';
+short num1 = 10;
+int    num2 = 200;
+long num3 = 1234;
+float num4 = 12.23;
+double num5 = 12.2345;
+
+printf(&quot;a=%c,num1=%hd,num2=%d，num3=%ld，num4=%f，num5=%lf&quot;);
+
+}
+</code></pre>
+<p>这里long long 就不赘述了<br>
+注意（<br>
+8bit=1byte，<br>
+1kb=1024byte<br>
+1mb= 1024kb<br>
+1gb= 1024mb<br>
+1tb= 1024gb<br>
+1pb= 1024tb<br>
+）</p>
+<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>字节</th>
+<th>输出格式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>char</td>
+<td>1byte</td>
+<td>%c</td>
+</tr>
+<tr>
+<td>short</td>
+<td>2~4byte</td>
+<td>%hd</td>
+</tr>
+<tr>
+<td>int</td>
+<td>4byte</td>
+<td>%d</td>
+</tr>
+<tr>
+<td>long</td>
+<td>4~8 byte</td>
+<td>%ld</td>
+</tr>
+<tr>
+<td>float</td>
+<td>4 byte</td>
+<td>%f</td>
+</tr>
+<tr>
+<td>double</td>
+<td>8byte</td>
+<td>%lf</td>
+</tr>
+</tbody>
+</table>
+<p>这里是输出10进制的格式，接下来介绍输出8进制和16进制<br>
+8进制：<br>
+<strong>%ho，%o， %lo.</strong> 要展示前缀的话; <strong>%#o</strong> 加个#字符就OK了<br>
+16进制：<br>
+<strong>%hx，%x，%lx</strong>(x可大写，可小写)，展示前缀：<strong>%#x</strong><br>
+注：<strong>sizeof()</strong> 可以测定变量的字节数</p>
+<h2 id="-3"></h2>
+<p><strong>3.变量分类</strong><br>
+1.变量可以分为全局变量和局部变量</p>
+<pre><code>int num2 = 20;//全局变量 定义在代码块之外
+
+int main() {
+
+int num1 = 10; //局部变量-定义在代码块内部
+
+  return 0; //局部变量的名字和全局变量的名字不要相同， 相同时候，程序执行优先执行局部变量
+
+};
+</code></pre>
+<p><strong>2.变量的作用域</strong><br>
+作用域 scope ，一段程序代码中所用到的名字并不是总有效/可用的， 限定这个名字的可用性代码范围就是这个名字的作用域。</p>
+<p>1.局部变量的作用域是变量所在的局部范围<br>
+2. 全局变量的作用域是整个工程</p>
+<p>For example</p>
+<pre><code>int main() {
+
+ {
+
+ int num = 0; // 局部变量的作用域
+
+ int num1 = 1;
+
+ extern int G;// extern 是定义外部已经定义好的变量，只需声明一哈就行。
+
+test(); //调用函数
+
+printf(&quot;%d,%d,%d,G=%d&quot;, num, num1,global,G);//0 1 2000, G是另一个文件的定义的变量
+
+    }
+
+printf(&quot;%d,%d&quot;, num, num1); //报错error 作用域不匹配
+
+}
+
+
+
+</code></pre>
+<p>3.变量的生命周期：<br>
+<strong>局部变量</strong>的生命周期; 进入作用域声明周期开始， 出作用域结束<br>
+<strong>全局变量</strong>的生命周期; 整个程序的生命周期</p>
  </p>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-md-12 animate-box">
+                        
+                            <div class="next-post">
+                                <div class="next">下一篇</div>
+                                <a href="https://hanZhenry.github.io/post/about/">
+                                    <h3 class="post-title">
+                                        关于Henry小站
+                                    </h3>
+                                </a>
+                            </div>
                         
                     </div>
                 </div>
@@ -206,10 +333,9 @@
     <ul class="markdownIt-TOC">
 <li>
 <ul>
-<li><a href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%9A%84%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2">🏠 计算机，人工智能的技术博客</a></li>
-<li><a href="#%E5%8D%9A%E4%B8%BB%E6%98%AF%E8%B0%81%E5%93%BC%E7%91%9E%E6%B1%89henry-han">👨‍💻 博主是谁——哼瑞汉（henry han）</a></li>
-<li><a href="#%E5%85%B4%E8%B6%A3%E7%88%B1%E5%A5%BD-c%E8%AF%AD%E8%A8%80%E5%B5%8C%E5%85%A5%E5%BC%8F%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD">⛹ 兴趣爱好 ——C语言，嵌入式，人工智能</a></li>
-<li><a href="#%E8%81%94%E7%B3%BB%E6%88%91%E5%91%80hanliangliang1118163com">📬 联系我呀——hanliangliang1118@163.com</a></li>
+<li></li>
+<li></li>
+<li></li>
 </ul>
 </li>
 </ul>

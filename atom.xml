@@ -2,488 +2,148 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hanZhenry.github.io</id>
     <title>henry_blog</title>
-    <updated>2021-08-13T15:34:41.344Z</updated>
+    <updated>2022-01-31T06:44:06.260Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hanZhenry.github.io"/>
     <link rel="self" href="https://hanZhenry.github.io/atom.xml"/>
     <subtitle>person blog </subtitle>
     <logo>https://hanZhenry.github.io/images/avatar.png</logo>
     <icon>https://hanZhenry.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2021, henry_blog</rights>
+    <rights>All rights reserved 2022, henry_blog</rights>
     <entry>
-        <title type="html"><![CDATA[java之面向对象]]></title>
-        <id>https://hanZhenry.github.io/post/java-zhi-mian-xiang-dui-xiang/</id>
-        <link href="https://hanZhenry.github.io/post/java-zhi-mian-xiang-dui-xiang/">
+        <title type="html"><![CDATA[初识c语言]]></title>
+        <id>https://hanZhenry.github.io/post/chu-shi-c-yu-yan/</id>
+        <link href="https://hanZhenry.github.io/post/chu-shi-c-yu-yan/">
         </link>
-        <updated>2021-08-13T15:25:19.000Z</updated>
-        <summary type="html"><![CDATA[<h1 id="面向对象">面向对象</h1>
-<h2 id="一学习面向对象内容的三条主线">一.学习面向对象内容的三条主线</h2>
-<p>1.Java类及类的成员:属性、方法、构造器、代码块、内部类<br>
-2.面向对象的三大特征: 封装、 继承、多态、(抽象性)<br>
-3.其它关键字: this， super， static， final， abstract， interface</p>
-<h2 id="二面向过程面向对象的解释">二.面向过程，面向对象的解释</h2>
-<p>1.面向过程，强调的是功能行为，以函数为最小单位，考虑怎么做。<br>
-——————————————————————————<br>
-1.打开冰箱<br>
-2.把大象装进冰箱<br>
-3.把冰箱门关<br>
-——————————————————————————<br>
-2.面向对象，将功能封装进对象，强调具备了功能的对象，以类/对象为最小单位，考虑谁来做。<br>
-——————————————————————————<br>
-//创建对象</p>
-<pre><code>   人{
-    打开（冰箱）{
-    冰箱.开门();
-   }
+        <updated>2022-01-31T06:42:33.000Z</updated>
+        <content type="html"><![CDATA[<p><strong>1.第一个程序</strong></p>
+<h2 id=""></h2>
+<pre><code>#include&lt;stdio.h&gt;
+int main() {
+ printf(&quot;HelloWorld\n&quot;);
+ return 0；
+}
 
-
-    操作(大象){
-    大象.进入(冰箱);
-   }
 </code></pre>
-<p>//创建函数</p>
-<pre><code> 关闭(冰箱){ 
-   冰箱.关门(); 
-  }
-}
- 冰箱{
- 开门(){ } 
-  关门(){ }
-}
+<ul>
+<li>#include&lt;stdio.h&gt; 头文件，标准输入输出库</li>
+<li>int main（）主函数——程序的入口，有且只有一个。int 表示返回一个整型值。</li>
+<li>printf() 打印函数 c语言库本身提供的函数</li>
+</ul>
+<h2 id="-2"></h2>
+<p><strong>2.数据类型</strong></p>
+<pre><code>int main(){
+char a= 'A';
+short num1 = 10;
+int    num2 = 200;
+long num3 = 1234;
+float num4 = 12.23;
+double num5 = 12.2345;
 
- 大象{
-进入(冰箱){ }
-}
-</code></pre>
-<p>——————————————————————————</p>
-<h2 id="三面向对象的思想概述">三.面向对象的思想概述</h2>
-<p>类是对一类事物的描述，是抽象的、概念上的定义<br>
-对象是实际存在的该类事物的每个个体，因而也称为实例(instance)。<br>
-1.面向对象程序设计的重点是类的设计、 类的设计，其实就是类的成员的设计</p>
-<p>属性=成员变量=field=域<br>
-方法= 成员方法 =函数=method<br>
-2.类和对象的过程</p>
-<pre><code>     1.创建类，设计类的成员
-     2.创建类的对象
-     3.通过&quot;对象.属性&quot;&quot;对象.方法&quot;调用对象的结构 
-</code></pre>
-<p>3.程序说明</p>
-<pre><code>public class oppTest1 {
- public static void main(String[] args) {
-	//创建person类的对象
-	 person p1= new person();
-	 
-	 
-	 // 调用对象的结构：属性、方法
-	    //调用属性
-	 p1.name= &quot;henry&quot;;
-	 p1.age= 24;
-	 p1.sexual= &quot;man&quot;;
-	 System.out.println(p1.name+&quot; &quot;+p1.age+&quot; &quot;+p1.sexual);
-	   //调用方法&quot;对象.方法&quot;
-	 p1.eat();
-	 p1.sleep();
-	 p1.interesting(&quot;compute&quot;);
-	 
-	 person p2= new person();
-	 p2.name= &quot;han&quot;;
-	 p2.age =30;
-	 System.out.println(p2.name+&quot; &quot;+p1.age);
-	
-	 person p3= p1;
-	 
-	 //赋予的是 p1.name内存地址
-	 p3.name= p1.name;
-	 System.out.println(p3.name);
-}
-}
-
-
-//造好一个类
-class person{
-	
-	//属性
-	String name;
-	int age;
-	String sexual;
-	
-	
-
-	
-	
-	//方法
-	public void eat (){
-		System.out.println(&quot;吃饭&quot;);
-		
-	}
-	public void sleep (){
-		System.out.println(&quot;睡觉&quot;);
-		
-	}
-	public void work(){
-		System.out.println(&quot;工作&quot;);
-		
-	}
-	public void interesting(String things){
-		System.out.println(&quot;兴趣&quot;+things);
-		
-	}
-}
-</code></pre>
-<h2 id="四类中属性的使用">四.类中属性的使用</h2>
-<p>1.属性(成员变量) vs 局部变量</p>
-<pre><code>1.1.相同点
-  定义变量的格式： 数据类型 变量名= 变量值;
-  先声明、后使用
-  变量有其对应的作用域
-
-1.2.不同点
-1.类中声明的位置不同
-   局部变量： 声明在方法内、方法形参、代码块、构造器形参、构造器内部的变量
-   2. 关于权限修饰符的不同
-   属性：在声明属性时，指明其权限，使用权限修饰符,常用的权限修饰符：private、public、static、final等
-   局部变量：不能用权限修饰符修饰，可以用final修饰
-     
- 
-2.初始化值    
-   属性：有默认初始化值
-    byte 0
-    short 0
-    int 0
-    long 0L
-    float 0.0F
-    double 0.0
-    char 0 或写为:’\u0000’(表现为空)
-     boolean false
-     引用类型 null
-
-    局部变量：没有默认初始化值，必须显式赋值，     
-3.内存加载位置
-   属性：堆空间 或 静态域内
-  局部变量：栈空间  
-</code></pre>
-<p>代码呈现</p>
-<pre><code>public class oppTest2 {
-public static void main(String[] args){
-  //以类创建对象
-  user  u1= new u1();
-
-
-  //调用类的属性
-
-  u1.name= &quot;henry&quot;;
-  u1.age= 24;
-  u1.address= &quot;wuhu&quot;;
-  u1.phoneNumber= 1123456789;
-  u1.email= &quot;123456@qq.com&quot;;
-
-
-  //调用类的方法
-  u1.talk();
-   u1.eat();
-
-
-
-
-
-
-
-
-
-
-
-}
-}
-
-class user{
-	
-	String name;
-	int    age ;
-	String address;
-	int    phoneNumber;
-	String email;
-	
-	
-    public void talk(String language) {//language：形参，也是局部变量
-    	System.out.println(&quot;使用&quot;+language+&quot;交流&quot;);
-    	
-    	
-    }
-	
-    public void eat() {
-    	String food=&quot;cake&quot;;//局部变量
-    	System.out.println(&quot;user like whats food:&quot;+ food);
-    	
-    	
-    }
-	
-	
-	
-	
-}
-</code></pre>
-]]></summary>
-        <content type="html"><![CDATA[<h1 id="面向对象">面向对象</h1>
-<h2 id="一学习面向对象内容的三条主线">一.学习面向对象内容的三条主线</h2>
-<p>1.Java类及类的成员:属性、方法、构造器、代码块、内部类<br>
-2.面向对象的三大特征: 封装、 继承、多态、(抽象性)<br>
-3.其它关键字: this， super， static， final， abstract， interface</p>
-<h2 id="二面向过程面向对象的解释">二.面向过程，面向对象的解释</h2>
-<p>1.面向过程，强调的是功能行为，以函数为最小单位，考虑怎么做。<br>
-——————————————————————————<br>
-1.打开冰箱<br>
-2.把大象装进冰箱<br>
-3.把冰箱门关<br>
-——————————————————————————<br>
-2.面向对象，将功能封装进对象，强调具备了功能的对象，以类/对象为最小单位，考虑谁来做。<br>
-——————————————————————————<br>
-//创建对象</p>
-<pre><code>   人{
-    打开（冰箱）{
-    冰箱.开门();
-   }
-
-
-    操作(大象){
-    大象.进入(冰箱);
-   }
-</code></pre>
-<p>//创建函数</p>
-<pre><code> 关闭(冰箱){ 
-   冰箱.关门(); 
-  }
-}
- 冰箱{
- 开门(){ } 
-  关门(){ }
-}
-
- 大象{
-进入(冰箱){ }
-}
-</code></pre>
-<p>——————————————————————————</p>
-<h2 id="三面向对象的思想概述">三.面向对象的思想概述</h2>
-<p>类是对一类事物的描述，是抽象的、概念上的定义<br>
-对象是实际存在的该类事物的每个个体，因而也称为实例(instance)。<br>
-1.面向对象程序设计的重点是类的设计、 类的设计，其实就是类的成员的设计</p>
-<p>属性=成员变量=field=域<br>
-方法= 成员方法 =函数=method<br>
-2.类和对象的过程</p>
-<pre><code>     1.创建类，设计类的成员
-     2.创建类的对象
-     3.通过&quot;对象.属性&quot;&quot;对象.方法&quot;调用对象的结构 
-</code></pre>
-<p>3.程序说明</p>
-<pre><code>public class oppTest1 {
- public static void main(String[] args) {
-	//创建person类的对象
-	 person p1= new person();
-	 
-	 
-	 // 调用对象的结构：属性、方法
-	    //调用属性
-	 p1.name= &quot;henry&quot;;
-	 p1.age= 24;
-	 p1.sexual= &quot;man&quot;;
-	 System.out.println(p1.name+&quot; &quot;+p1.age+&quot; &quot;+p1.sexual);
-	   //调用方法&quot;对象.方法&quot;
-	 p1.eat();
-	 p1.sleep();
-	 p1.interesting(&quot;compute&quot;);
-	 
-	 person p2= new person();
-	 p2.name= &quot;han&quot;;
-	 p2.age =30;
-	 System.out.println(p2.name+&quot; &quot;+p1.age);
-	
-	 person p3= p1;
-	 
-	 //赋予的是 p1.name内存地址
-	 p3.name= p1.name;
-	 System.out.println(p3.name);
-}
-}
-
-
-//造好一个类
-class person{
-	
-	//属性
-	String name;
-	int age;
-	String sexual;
-	
-	
-
-	
-	
-	//方法
-	public void eat (){
-		System.out.println(&quot;吃饭&quot;);
-		
-	}
-	public void sleep (){
-		System.out.println(&quot;睡觉&quot;);
-		
-	}
-	public void work(){
-		System.out.println(&quot;工作&quot;);
-		
-	}
-	public void interesting(String things){
-		System.out.println(&quot;兴趣&quot;+things);
-		
-	}
-}
-</code></pre>
-<h2 id="四类中属性的使用">四.类中属性的使用</h2>
-<p>1.属性(成员变量) vs 局部变量</p>
-<pre><code>1.1.相同点
-  定义变量的格式： 数据类型 变量名= 变量值;
-  先声明、后使用
-  变量有其对应的作用域
-
-1.2.不同点
-1.类中声明的位置不同
-   局部变量： 声明在方法内、方法形参、代码块、构造器形参、构造器内部的变量
-   2. 关于权限修饰符的不同
-   属性：在声明属性时，指明其权限，使用权限修饰符,常用的权限修饰符：private、public、static、final等
-   局部变量：不能用权限修饰符修饰，可以用final修饰
-     
- 
-2.初始化值    
-   属性：有默认初始化值
-    byte 0
-    short 0
-    int 0
-    long 0L
-    float 0.0F
-    double 0.0
-    char 0 或写为:’\u0000’(表现为空)
-     boolean false
-     引用类型 null
-
-    局部变量：没有默认初始化值，必须显式赋值，     
-3.内存加载位置
-   属性：堆空间 或 静态域内
-  局部变量：栈空间  
-</code></pre>
-<p>代码呈现</p>
-<pre><code>public class oppTest2 {
-public static void main(String[] args){
-  //以类创建对象
-  user  u1= new u1();
-
-
-  //调用类的属性
-
-  u1.name= &quot;henry&quot;;
-  u1.age= 24;
-  u1.address= &quot;wuhu&quot;;
-  u1.phoneNumber= 1123456789;
-  u1.email= &quot;123456@qq.com&quot;;
-
-
-  //调用类的方法
-  u1.talk();
-   u1.eat();
-
-
-
-
-
-
-
-
-
-
-
-}
-}
-
-class user{
-	
-	String name;
-	int    age ;
-	String address;
-	int    phoneNumber;
-	String email;
-	
-	
-    public void talk(String language) {//language：形参，也是局部变量
-    	System.out.println(&quot;使用&quot;+language+&quot;交流&quot;);
-    	
-    	
-    }
-	
-    public void eat() {
-    	String food=&quot;cake&quot;;//局部变量
-    	System.out.println(&quot;user like whats food:&quot;+ food);
-    	
-    	
-    }
-	
-	
-	
-	
-}
-</code></pre>
-<!-- more -->
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[数组]]></title>
-        <id>https://hanZhenry.github.io/post/java-shu-zu/</id>
-        <link href="https://hanZhenry.github.io/post/java-shu-zu/">
-        </link>
-        <updated>2021-08-10T13:24:33.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="数组">数组</h1>
-<h2 id="一维数组">一维数组</h2>
-<ol>
-<li>一维数组初始化两种方式<br>
-1.1 静态化初始化<pre><code>1.String arr1= new String[]{&quot;henry&quot;,&quot;lina&quot;,&quot;smith&quot;};
-</code></pre>
-1.2 动态初始化<pre><code>2.int[] arr = new int[5];
-</code></pre>
-</li>
-</ol>
-<p>tips:数组一旦初始化,其&quot;arr.length&quot;(长度)就会被确定，且不可修改。</p>
-<ol start="2">
-<li>
-<p>二维数组初始化两种方式<br>
-2.1 静态化初始化</p>
-<pre><code>1.int[][] arr = new int[][]{{1,2,3},{4,5,6}};
-</code></pre>
-<p>2.2 动态初始化</p>
-<pre><code>int[][] arr = new int[5][];
-int[][] arr = new int[5][4];  
-</code></pre>
-</li>
-<li>
-<p>如何遍历二维数组<br>
-3.1利用循环语句即可</p>
-<pre><code>int[][] arr1= new int[][]{{1，2，3}，{4，5，6}，{7，8，9}};
-for(int i= 0;i&lt;arr.length;i++){
-    for(int j= 0;j&lt;arr[i].length;j++){
-        System.out.print(arr[i][j]);
-    }
+printf(&quot;a=%c,num1=%hd,num2=%d，num3=%ld，num4=%f，num5=%lf&quot;);
 
 }
 </code></pre>
-</li>
-<li>
-<p>不同类型的一维数组元素的初始化值是多少<br>
-int: 0<br>
-boolean:false<br>
-引用类型：null<br>
-char： 0</p>
-</li>
-<li>
-<p>内存解析<br>
-分析地址和元素。</p>
-</li>
-</ol>
+<p>这里long long 就不赘述了<br>
+注意（<br>
+8bit=1byte，<br>
+1kb=1024byte<br>
+1mb= 1024kb<br>
+1gb= 1024mb<br>
+1tb= 1024gb<br>
+1pb= 1024tb<br>
+）</p>
+<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>字节</th>
+<th>输出格式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>char</td>
+<td>1byte</td>
+<td>%c</td>
+</tr>
+<tr>
+<td>short</td>
+<td>2~4byte</td>
+<td>%hd</td>
+</tr>
+<tr>
+<td>int</td>
+<td>4byte</td>
+<td>%d</td>
+</tr>
+<tr>
+<td>long</td>
+<td>4~8 byte</td>
+<td>%ld</td>
+</tr>
+<tr>
+<td>float</td>
+<td>4 byte</td>
+<td>%f</td>
+</tr>
+<tr>
+<td>double</td>
+<td>8byte</td>
+<td>%lf</td>
+</tr>
+</tbody>
+</table>
+<p>这里是输出10进制的格式，接下来介绍输出8进制和16进制<br>
+8进制：<br>
+<strong>%ho，%o， %lo.</strong> 要展示前缀的话; <strong>%#o</strong> 加个#字符就OK了<br>
+16进制：<br>
+<strong>%hx，%x，%lx</strong>(x可大写，可小写)，展示前缀：<strong>%#x</strong><br>
+注：<strong>sizeof()</strong> 可以测定变量的字节数</p>
+<h2 id="-3"></h2>
+<p><strong>3.变量分类</strong><br>
+1.变量可以分为全局变量和局部变量</p>
+<pre><code>int num2 = 20;//全局变量 定义在代码块之外
+
+int main() {
+
+int num1 = 10; //局部变量-定义在代码块内部
+
+  return 0; //局部变量的名字和全局变量的名字不要相同， 相同时候，程序执行优先执行局部变量
+
+};
+</code></pre>
+<p><strong>2.变量的作用域</strong><br>
+作用域 scope ，一段程序代码中所用到的名字并不是总有效/可用的， 限定这个名字的可用性代码范围就是这个名字的作用域。</p>
+<p>1.局部变量的作用域是变量所在的局部范围<br>
+2. 全局变量的作用域是整个工程</p>
+<p>For example</p>
+<pre><code>int main() {
+
+ {
+
+ int num = 0; // 局部变量的作用域
+
+ int num1 = 1;
+
+ extern int G;// extern 是定义外部已经定义好的变量，只需声明一哈就行。
+
+test(); //调用函数
+
+printf(&quot;%d,%d,%d,G=%d&quot;, num, num1,global,G);//0 1 2000, G是另一个文件的定义的变量
+
+    }
+
+printf(&quot;%d,%d&quot;, num, num1); //报错error 作用域不匹配
+
+}
+
+
+
+</code></pre>
+<p>3.变量的生命周期：<br>
+<strong>局部变量</strong>的生命周期; 进入作用域声明周期开始， 出作用域结束<br>
+<strong>全局变量</strong>的生命周期; 整个程序的生命周期</p>
 ]]></content>
     </entry>
     <entry>
@@ -496,10 +156,10 @@ char： 0</p>
 <p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
 </blockquote>
 <figure data-type="image" tabindex="1"><img src="https://hanZhenry.github.io/post-images/1627057240363.jpg" alt="" loading="lazy"></figure>
-<h2 id="关于本站-科技技术博文">🏠 关于本站 科技，技术，博文</h2>
-<h2 id="博主是谁-henry">👨‍💻 博主是谁 henry</h2>
-<h2 id="兴趣爱好-略都有爱好">⛹ 兴趣爱好 略都有爱好</h2>
-<h2 id="联系我呀-15334523qqcom">📬 联系我呀 15334523@qq.com</h2>
+<h2 id="计算机人工智能的技术博客">🏠 计算机，人工智能的技术博客</h2>
+<h2 id="博主是谁哼瑞汉henry-han">👨‍💻 博主是谁——哼瑞汉（henry han）</h2>
+<h2 id="兴趣爱好-c语言嵌入式人工智能">⛹ 兴趣爱好 ——C语言，嵌入式，人工智能</h2>
+<h2 id="联系我呀hanliangliang1118163com">📬 联系我呀——hanliangliang1118@163.com</h2>
 ]]></content>
     </entry>
 </feed>
